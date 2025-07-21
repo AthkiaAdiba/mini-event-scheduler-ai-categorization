@@ -11,6 +11,7 @@ import {
   getEvents,
   updateEvent,
 } from "./api/eventService";
+import { Footer } from "./components/Footer";
 
 const App = () => {
   const [events, setEvents] = useState<Event[]>([]);
@@ -113,7 +114,7 @@ const App = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex flex-col">
       <Header />
-      <main className="flex-1 container mx-auto px-3 sm:px-4 lg:px-6 py-4 sm:py-6 lg:py-8 max-w-7xl">
+      <main className="flex-1 container mx-auto px-3 sm:px-4 lg:px-6 py-4 sm:py-6 lg:py-20 max-w-7xl">
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           <div className="xl:col-span-1 order-2 xl:order-1">
             <EventForm
@@ -132,6 +133,7 @@ const App = () => {
           </div>
         </div>
       </main>
+      <Footer />
       {toast && (
         <Toast
           message={toast.message}
