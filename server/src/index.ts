@@ -8,6 +8,12 @@ dotenv.config();
 
 // middleware
 app.use(cors());
+app.use(
+  cors({
+    origin: ["https://mini-event-scheduler-ai-categorizat.vercel.app"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 type Event = {

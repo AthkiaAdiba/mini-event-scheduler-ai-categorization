@@ -12,6 +12,10 @@ const port = process.env.PORT || 5000;
 dotenv_1.default.config();
 // middleware
 app.use((0, cors_1.default)());
+app.use((0, cors_1.default)({
+    origin: ["https://mini-event-scheduler-ai-categorizat.vercel.app"],
+    credentials: true,
+}));
 app.use(express_1.default.json());
 // In-memory event store
 const events = [];
